@@ -34,9 +34,14 @@ function updateCasePrice(newNumber) {
 
 function calculateTotal() {
   //calculate sub-total and set new sub-total
-  const currentPhoneTotal = document.getElementById("phone-price");
-  console.log(typeof currentPhoneTotal);
-  const currentCaseTotal = document.getElementById("case-price");
+  const currentPhoneTotalElement = document.getElementById("phone-price");
+  const currentPhoneTotalString = currentPhoneTotalElement.innerText;
+  const currentPhoneTotal = parseFloat(currentPhoneTotalString);
+
+  const currentCaseTotalElement = document.getElementById("case-price");
+  const currentCaseTotalString = currentCaseTotalElement.innerText;
+  const currentCaseTotal = parseFloat(currentCaseTotalString);
+
   const newSubTotal = currentPhoneTotal + currentCaseTotal;
   setTextValueById("sub-total", newSubTotal);
 
